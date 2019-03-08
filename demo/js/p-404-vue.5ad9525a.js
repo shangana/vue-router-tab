@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["p-404-vue"],{"8cdb":function(e,t,n){"use strict";n.r(t);var a=function(){var e=this,t=e.$createElement;e._self._c;return e._m(0)},s=[function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{staticClass:"app-main"},[n("div",{staticClass:"app-page"},[n("h2",[e._v("页面找不到了！！！")])])])}],c=n("2877"),i={},l=Object(c["a"])(i,a,s,!1,null,null,null);t["default"]=l.exports}}]);
+//# sourceMappingURL=p-404-vue.5ad9525a.js.map

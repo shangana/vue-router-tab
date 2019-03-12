@@ -1,2 +1,2 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["ly-Transition-vue"],{"0a13":function(t,a,n){"use strict";var e=n("215e"),i=n.n(e);i.a},"208c":function(t,a,n){"use strict";n.r(a);var e=function(){var t=this,a=t.$createElement,n=t._self._c||a;return n("main",{staticClass:"app-main"},[n("router-tab",{attrs:{"page-transition":"page-fade","tab-transition":"tab-scale"}})],1)},i=[],s=(n("0a13"),n("2877")),r={},c=Object(s["a"])(r,e,i,!1,null,"2d80750e",null);a["default"]=c.exports},"215e":function(t,a,n){}}]);
-//# sourceMappingURL=ly-Transition-vue.ded03982.js.map
+//# sourceMappingURL=ly-Transition-vue.c6376803.js.map

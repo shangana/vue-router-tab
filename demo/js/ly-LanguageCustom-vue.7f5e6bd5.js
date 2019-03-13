@@ -1,2 +1,2 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["ly-LanguageCustom-vue"],{bed4:function(e,t,s){"use strict";s.r(t);var n=function(){var e=this,t=e.$createElement,s=e._self._c||t;return s("main",{staticClass:"app-main"},[s("router-tab",{attrs:{i18n:e.lang}})],1)},l=[],a={name:"LanguageCustom",data:function(){return{lang:{tab:{untitled:"Untitled Page"},contextmenu:{refresh:"Refresh This",refreshAll:"Refresh All",close:"Close This",closeLefts:"Close to the Left",closeRights:"Close to the Right",closeOthers:"Close Others"}}}}},o=a,r=s("2877"),u=Object(r["a"])(o,n,l,!1,null,null,null);t["default"]=u.exports}}]);
-//# sourceMappingURL=ly-LanguageCustom-vue.c47bcd29.js.map
+//# sourceMappingURL=ly-LanguageCustom-vue.7f5e6bd5.js.map

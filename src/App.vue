@@ -1,19 +1,10 @@
 <template>
   <div class="app-ct" :class="{ 'sidebar-open': sidebarOpen }">
-    <header class="app-hd">
-      <a class="rt-icon-menu toggle-side" @click="sidebarOpen = !sidebarOpen"></a>
-      <img class="site-logo" src="@/assets/img/logo.png" alt="Vue Router Tab - logo">
-      <h2 class="site-title">
-        <a href="../">Vue Router Tab</a> - Demo
-      </h2>
-    </header>
+    <app-header @sidebar-change="sidebarOpen = !sidebarOpen"/>
 
     <div class="app-bd">
       <div class="app-sd-mask" @click="sidebarOpen = false"></div>
-      <aside class="app-sd">
-        <menu-group v-for="(item, index) in menu" :key="index" :data="item"/>
-      </aside>
-
+      <app-aside/>
       <router-view/>
     </div>
   </div>
@@ -22,37 +13,15 @@
 <style lang="scss" src="./assets/scss/demo.scss"></style>
 
 <script>
-import MenuGroup from '@/components/MenuGroup.vue'
+import AppHeader from '@/components/AppHeader.vue'
+import AppAside from '@/components/AppAside.vue'
+
 export default {
   name: 'App',
-  components: { MenuGroup },
+  components: { AppHeader, AppAside },
   data () {
     return {
-      sidebarOpen: false,
-      menu: [{
-        title: 'RouterTab 配置',
-        data: [
-          { text: '默认配置', to: '/default/' },
-          { text: '初始展示页签', to: '/initial-tabs/' },
-          {
-            text: '语言配置',
-            to: '/language/',
-            children: {
-              data: [
-                { text: '自定义语言', to: '/language/custom' }
-              ]
-            }
-          },
-          { text: '自定义页签模板', to: '/slot/' }
-        ]
-      }, {
-        title: '页面配置',
-        data: [
-          { text: '动态页签配置', to: '/default/tab-dynamic' },
-          { text: '页面离开提示', to: '/default/page-leave' },
-          { text: '页签操作', to: '/default/tab-operate' }
-        ]
-      }]
+      sidebarOpen: false
     }
   },
 
@@ -65,3 +34,71 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+$side-width: 200px;
+$just-trans: all .2s ease-in-out;
+
+/* 布局 */
+.app-ct {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  .app-sd {
+    width: $side-width;
+    transition: $just-trans;
+
+    @include screen-mob {
+      left: -$side-width;
+    }
+  }
+
+  .app-bd {
+    flex: 1;
+    height: 0;
+    position: relative;
+  }
+}
+
+.sidebar-open {
+  @include screen-mob {
+    .app-sd-mask {
+      display: block;
+    }
+
+    .app-sd {
+      left: 0;
+    }
+  }
+}
+
+.app-sd-mask,
+.app-sd {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100%;
+}
+
+.app-sd-mask {
+  display: none;
+  width: 100%;
+}
+
+.app-main {
+  padding-left: $side-width;
+  height: 100%;
+  transition: $just-trans;
+
+  @include screen-mob {
+    padding-left: 0;
+  }
+
+  /deep/ .router-tab {
+    height: 100%;
+  }
+}
+</style>

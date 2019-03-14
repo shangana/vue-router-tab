@@ -1,7 +1,6 @@
 // 空对象和数组
 export const emptyObj = Object.create(null)
 export const emptyArray = []
-export const logPrefix = '[vue-router-tab]:'
 
 // 是否定义
 export function isDef (v) {
@@ -19,16 +18,6 @@ export function debounce (fn, delay = 200) {
       fn.call(context, args)
     }, delay)
   }
-}
-
-// 队列执行promise
-export function promiseQueue (promises, isFinally = true) {
-  let queue = Promise.resolve()
-  const type = isFinally ? 'finally' : 'then'
-  for (let item of promises) {
-    queue = queue[type](item)
-  }
-  return queue
 }
 
 // 滚动
@@ -63,12 +52,12 @@ export function getFirstComponentChild (children) {
 }
 
 // 获取缓存key
-export function getAliveKey (route = this.$route) {
-  let aliveKey = (route.meta && route.meta.aliveKey) || this.aliveKey || 'path'
-  if (typeof aliveKey === 'function') {
-    return aliveKey.bind(this)(route)
+export function getAliveId (route = this.$route) {
+  let aliveId = (route.meta && route.meta.aliveId) || this.aliveId || 'path'
+  if (typeof aliveId === 'function') {
+    return aliveId.bind(this)(route)
   }
-  return route[aliveKey]
+  return route[aliveId]
 }
 
 /* 路由方法 */

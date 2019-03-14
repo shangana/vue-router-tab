@@ -9,6 +9,7 @@
           v-bind="typeof tabTransition === 'string' ? { name: tabTransition } : tabTransition"
           @after-enter="onTabTransitionEnd"
           @after-leave="onTabTransitionEnd">
+
           <router-link
             class="router-tab-item"
             tag="li"
@@ -18,6 +19,7 @@
             :key="id || to"
             :to="to"
             @contextmenu.native.prevent="e => showContextmenu(id, index, e)">
+
             <slot v-bind="{
               tab: items[index],
               tabs: items,
@@ -38,7 +40,7 @@
 
     <!-- 页面容器 -->
     <div class="router-tab-container" :class="{ loading }">
-      <router-alive ref="routerAlive" :alive-key="aliveKey" @update="updateTab">
+      <router-alive ref="routerAlive" :alive-id="aliveId" @update="updateTab">
         <transition
           v-bind="typeof pageTransition === 'string' ? { name: pageTransition } : pageTransition"
           @after-enter="onPageTransitionEnd"

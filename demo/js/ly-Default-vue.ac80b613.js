@@ -1,2 +1,2 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["ly-Default-vue"],{"01f6":function(t,e,n){"use strict";n.r(e);var a=function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("main",{staticClass:"app-main"},[n("router-tab")],1)},l=[],u=n("0c7c"),c={},s=Object(u["a"])(c,a,l,!1,null,null,null);e["default"]=s.exports}}]);
-//# sourceMappingURL=ly-Default-vue.c76dfd52.js.map
+//# sourceMappingURL=ly-Default-vue.ac80b613.js.map
